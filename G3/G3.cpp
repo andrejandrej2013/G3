@@ -5,56 +5,58 @@ Program created: 2022/02/11
 *******************************************/
 
 #include <iostream>
+#include "Node_list.h"
 
 using namespace std;
 
-//create linked list
-struct Node_list
+void sort_linked_list(Node_list* first_list)
 {
-    int val;
-    Node_list* next;
-    Node_list() : val(0), next(nullptr) {}
-    Node_list(int val) : val(val), next(nullptr) {}
-    Node_list(int val, Node_list* next) : val(val), next(next) {}
-};
-
-void fill_linked_list(Node_list* first_list, int size=10, int from=0, int to=10)
-{
-    for (int i = 0; i < size; i++)
+    while (first_list->next != nullptr)
     {
-        first_list->val = rand() % to + from;
-        cout << "Value N" << i+1 << "\t: " << first_list->val << endl;    //just print val - delete later
-        if (i== size-1) {
-            break;
+        if (first_list->val > first_list->next->val)
+        {
+            Node_list* save_address = first_list->next->next;
+            delete first_list->next;
+            first_list->next = save_address;
         }
-        first_list->next = new Node_list;
-        first_list = first_list->next;
+        else {
+            first_list = first_list->next;
+        }
     }
 }
-void clear_linked_link(Node_list* first_list)
+void print_linked_list(Node_list* first_list)
 {
+    int i = 1;
     while (first_list != nullptr)
     {
-        Node_list* intermediate_value = first_list->next;
-        delete first_list;
-        first_list = intermediate_value;
+        cout << "N" << i << "\t" << first_list->val << endl;
+        first_list = first_list->next;
+        i++;
     }
 }
+
 
 int main()
 {
     //set random point
-    srand(time(NULL));
+    
 
     //initialization
     Node_list* first_list = new Node_list;
 
     //fill linked list and get last
     fill_linked_list(first_list);
+    print_linked_list(first_list);
+
+    cout << endl;
+
+    sort_linked_list(first_list);
+    print_linked_list(first_list);
 
 
     //clear memory 
     clear_linked_link(first_list);
+
 
     return 0;
 }

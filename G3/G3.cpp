@@ -24,16 +24,7 @@ void sort_linked_list(Node_list* first_list)
         }
     }
 }
-void print_linked_list(Node_list* first_list)
-{
-    int i = 1;
-    while (first_list != nullptr)
-    {
-        cout << "N" << i << "\t" << first_list->val << endl;
-        first_list = first_list->next;
-        i++;
-    }
-}
+
 
 
 int main()

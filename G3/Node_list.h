@@ -37,3 +37,15 @@ void clear_linked_link(Node_list* first_list)
         first_list = intermediate_value;
     }
 }
+
+//print all elemets 
+void print_linked_list(Node_list* first_list)
+{
+    int i = 1;
+    while (first_list != nullptr)
+    {
+        std::cout << "N" << i << "\t" << first_list->val << std::endl;
+        first_list = first_list->next;
+        i++;
+    }
+}

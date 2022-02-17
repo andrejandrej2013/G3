@@ -35,7 +35,7 @@ int main()
     //initialization
     Node_list* first_list = new Node_list;
 
-    //fill linked list and get last
+    
     fill_linked_list(first_list);
     print_linked_list(first_list);
 
@@ -45,7 +45,7 @@ int main()
     print_linked_list(first_list);
 
 
-    //clear memory 
+    
     clear_linked_link(first_list);
 
 

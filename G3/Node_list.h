@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-//structor of linked list
+
 struct Node_list
 {
     int val;
@@ -11,7 +11,7 @@ struct Node_list
     Node_list(int val, Node_list* next) : val(val), next(next) {}
 };
 
-//fill linked list
+
 void fill_linked_list(Node_list* first_list, int size = 10, int from = 0, int to = 10)
 {
     srand(time(NULL));
@@ -27,7 +27,7 @@ void fill_linked_list(Node_list* first_list, int size = 10, int from = 0, int to
     }
 }
 
-//clear memory
+
 void clear_linked_link(Node_list* first_list)
 {
     while (first_list != nullptr)
@@ -38,7 +38,7 @@ void clear_linked_link(Node_list* first_list)
     }
 }
 
-//print all elemets 
+
 void print_linked_list(Node_list* first_list)
 {
     int i = 1;

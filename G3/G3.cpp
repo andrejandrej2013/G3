@@ -5,22 +5,25 @@ Program created: 2022/02/11
 *******************************************/
 
 #include <iostream>
-#include "Node_list.h"
+#include "node_list.h"
 
 using namespace std;
 
-void sort_linked_list(Node_list* first_list)
+void sort_linked_list(Node_list* list)
 {
-    while (first_list->next != nullptr)
+    if (list != nullptr) 
     {
-        if (first_list->val > first_list->next->val)
+        while (list->next != nullptr)
         {
-            Node_list* save_address = first_list->next->next;
-            delete first_list->next;
-            first_list->next = save_address;
-        }
-        else {
-            first_list = first_list->next;
+            if (list->val > list->next->val)
+            {
+                Node_list* save_address = list->next->next;
+                delete list->next;
+                list->next = save_address;
+            }
+            else {
+                list = list->next;
+            }
         }
     }
 }

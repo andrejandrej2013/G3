@@ -32,9 +32,6 @@ void sort_linked_list(Node_list* list)
 
 int main()
 {
-    //set random point
-    
-
     //initialization
     Node_list* first_list = new Node_list;
 
